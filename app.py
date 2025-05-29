@@ -34,7 +34,7 @@ def send_email_report(to_email, subject, body, attachment_bytes, filename):
     )
 
     with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-        smtp.login("your_email@gmail.com", "your_app_password")  # Use App Password!
+        smtp.login("asfournazik4@gmail.com", "abcd efgh ijkl mnop")  # Use App Password!
         smtp.send_message(msg)
 
 # Reconciliation Logic
