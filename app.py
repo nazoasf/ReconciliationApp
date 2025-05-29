@@ -22,7 +22,7 @@ def to_excel(df):
 def send_email_report(to_email, subject, body, attachment_bytes, filename):
     msg = EmailMessage()
     msg['Subject'] = subject
-    msg['From'] = "your_email@gmail.com"
+    msg['From'] = "asfournazik4@gmail.com"
     msg['To'] = to_email
     msg.set_content(body)
 
