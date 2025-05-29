@@ -64,8 +64,21 @@ def send_email_report(to_email, subject, body, attachment_bytes, filename):
         smtp.login("asfournazik4@gmail.com", "nazik123")
         smtp.send_message(msg)
 
+
+# Input fields (must be placed outside the button logic)
+to = st.text_input("Enter recipient email")
+
+# Show the button AFTER the input
 if st.button("📤 Send Report by Email"):
-    to = st.text_input("Enter recipient email")
     if to:
-        send_email_report(to, "Reconciliation Report", "Attached is your reconciliation report.", to_excel(result_df), "report.xlsx")
-        st.success("Email sent!")
+        send_email_report(
+            to,
+            "Reconciliation Report",
+            "Attached is your reconciliation report.",
+            to_excel(result_df),
+            "report.xlsx"
+        )
+        st.success("✅ Email sent successfully!")
+    else:
+        st.warning("⚠️ Please enter a valid email address.")
+
